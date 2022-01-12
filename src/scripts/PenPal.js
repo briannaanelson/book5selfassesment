@@ -1,4 +1,5 @@
 import { LetterForm } from "./LetterForm.js"
+import { Letters } from "./Letters.js"
 export const PenPal = () => {
     return `
     <h1>Pen Pal Society</h1>
@@ -8,7 +9,7 @@ export const PenPal = () => {
     
     <section class="AddedLetters">
     <h1>Letters</h1>
-    
+    ${Letters()}
     </section>
     
     `

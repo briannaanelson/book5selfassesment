@@ -9,26 +9,27 @@ const mainContainer = document.querySelector("#container")
 //         const [] = click.target.id.split("--")
 //     }
 // })
-const authors = getAuthors()
-const recipients = getRecipients()
 
+let authors = []
+let recipients = []
 
-const buildLetterItems = (letter) => {
+const convertLetters = (letter) => {
+    return `
+    <li>
+    ${letter.letter}
+    `
+}
 
-    const foundAuthor = authors.find(
-        (author) => {
-            return author.authorId === letter.author
-        }
-    )
+export const Letters = () => {
+    const authors = getAuthors()
+    const recipients = getRecipients()
+    const letters = getLetters()
+let html = "<ul>"
+const listItems = letters.map(convertLetters)
+html +=listItems.join("")
+html +="</ul>"
+return html
 
-    const foundRecipient = recipients.find(
-        (recipient) => {
-            return recipient.recipientId === letter.recipient
-        }
-    )
-
-    const AuthorName = foundAuthor()
-    
 
 }
 
