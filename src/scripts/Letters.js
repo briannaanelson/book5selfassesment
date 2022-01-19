@@ -4,37 +4,44 @@ import { getRecipients } from "./dataAccess.js"
 
 const mainContainer = document.querySelector("#container")
 
-// mainContainer.addEventListener("click", click => {
-//     if(click.target.id.startsWith("letter--")) {
-//         const [] = click.target.id.split("--")
-//     }
-// })
+export const LetterInfo = (letter) => {
+    const authors = getAuthors()
+    const recipients = getRecipients()
 
-let authors = []
-let recipients = []
+    const foundAuthor = authors.find(
+        (author) => {
+            return author.id === letter.author 
+        }
+    )
 
-const convertLetters = (letter) => {
-    return `
-    <li>
-    ${letter.letter}
-    `
+    const foundRecipient = recipients.find(
+        (recipient) => {
+            return recipient.id === letter.recipient
+        }
+    )
+        var today = new Date();
+        var date = (today.getMonth()+1)+'/'+today.getDate()+'/'+today.getFullYear();
+
+        return `<p>Dear ${foundAuthor.name} (${foundAuthor.email}),</p>
+               <p>${letter.letter}</p>
+               <p>Sincerely, ${foundRecipient.name} (${foundRecipient.email})</p>
+               <p>Sent on ${date}</p>
+               <p>${letter.topic}</p>
+        `
+      
+            
+
 }
 
 export const Letters = () => {
-    const authors = getAuthors()
-    const recipients = getRecipients()
-    const letters = getLetters()
-let html = "<ul>"
-const listItems = letters.map(convertLetters)
-html +=listItems.join("")
-html +="</ul>"
-return html
+const letters = getLetters()
+    let html = "<ul>"
 
+    const listItems = letters.map(LetterInfo)
+    html += listItems.join("")
 
+    html += "</ul>"
+
+    return html
 }
 
-// export const Letters = () => {
-//     const authors = getAuthors()
-//     const recipients = getRecipients()
-//     const letters = getLetters()
-// }

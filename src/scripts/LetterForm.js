@@ -20,10 +20,10 @@ mainContainer.addEventListener("click", clickEvent =>{
 
         //make an object out of the user selections/input
         const dataToSendToAPI = {
-            author: letterAuthor,
+            author: parseInt(letterAuthor),
             letter: userLetter,
             topic: letterTopic,
-            recipient: letterRecipient
+            recipient: parseInt(letterRecipient)
         }
 
         //send info to API for permanent storage
@@ -51,7 +51,7 @@ export const LetterForm = () => {
         ${
             authors.map(
                 author =>{
-                    return `<option value="${author.authorId}">${author.name}</option>`
+                    return `<option value="${author.id}">${author.name}</option>`
                 }
             ).join("")
         }
@@ -94,29 +94,3 @@ return html
 
 }
 
-// function getRadioVal(form1, name){
-//     var val;
-//     var radios = form1.elements[name];
-//     for (var i=0, len=radios.length; i<len; i++) {
-//         if ( radios[i].checked ) { // radio checked?
-//             val = radios[i].value; // if so, hold its value in val
-//             break; // and break out of for loop
-//         }
-//     }
-//     return val; // return value of checked radio or undefined if none checked
-
-
-// }
-
-//store topics in api and display them from there
-
-
- // <div class="dropdown">
-        //     <label class="label" for="Author">Author</label>
-        //     <select id="Author">
-        //     <option>Choose Author..</option>
-        //     <option value="Mark Twain">Mark Twain</option>
-        //     <option value="Maya Angelou">Maya Angelou</option>
-        //     <option value="Brianna Nelson">Brianna Nelson</option>
-        //     </select>
-        // </div>

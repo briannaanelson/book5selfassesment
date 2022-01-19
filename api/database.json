@@ -1,94 +1,73 @@
 {
   "authors": [
     {
-      "authorId": 1,
+      "id": 1,
       "name": "Mark Twain",
       "email": "mark@marktwain.org"
     },
     {
-      "authorId": 2,
+      "id": 2,
       "name": "Maya Angelou",
       "email": "maya@mayaangelou.org"
     },
     {
-      "authorId": 3,
+      "id": 3,
       "name": "Brianna Nelson",
       "email": "brianna@briannanelson.org"
     }
   ],
   "recipients": [
     {
-      "recipientId": 1,
+      "id": 1,
       "name": "Langston Hughes",
       "email": "langston@langstonhughes.org"
     },
     {
-      "recipientId": 2,
+      "id": 2,
       "name": "Gwendolyn Brooks",
       "email": "gwendolyn@gwendolynbrooks.org"
     },
     {
-      "recipientId": 3,
+      "id": 3,
       "name": "Alice Walker",
       "email": "alice@alicewalker.org"
     }
   ],
   "topics": [
     {
-      "topicId": 1,
+      "id": 1,
       "topic": "Buisness"
     },
     {
-      "topicId": 2,
+      "id": 2,
       "topic": "Friendly"
     },
     {
-      "topicId": 3,
+      "id": 3,
       "topic": "Family"
     },
     {
-      "topicId": 4,
+      "id": 4,
       "topic": "Congratulations"
     },
     {
-      "topicId": 5,
+      "id": 5,
       "topic": "Condolences"
     }
   ],
   "letters": [
     {
-      "author": "undefined--2",
-      "letter": " Hello Maya!!           ",
-      "topic": "Congratulations",
-      "recipient": "Langston Hughes",
-      "id": 1
-    },
-    {
-      "author": "undefined--2",
-      "letter": "  ergadfgahjkl          ",
-      "topic": "Friendly",
-      "recipient": "Langston Hughes",
-      "id": 2
-    },
-    {
-      "author": "undefined--2",
-      "letter": "            rtghfg",
-      "topic": "Buisness",
-      "recipient": "Langston Hughes",
-      "id": 3
-    },
-    {
-      "author": "1",
+      "author": 1,
       "letter": " Hi Mark!           ",
       "topic": "Condolences",
-      "recipient": "1",
+      "recipient": 1,
       "id": 4
     },
     {
-      "author": "1",
+      "author": 1,
       "letter": " Hi Mark,  How are you doing?           ",
       "topic": "Condolences",
-      "recipient": "1",
+      "recipient": 1,
       "id": 5
     }
   ]
